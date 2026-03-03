@@ -1,0 +1,22 @@
+
+
+body{
+    padding: 150px;
+    background-color: black;
+
+}
+.palavraOculta{
+    margin: 0px, 10px;
+}
+h1{
+    text-align: center;
+    padding-top: 50px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+}
+
+#interacoes, p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color:white;    
+}
