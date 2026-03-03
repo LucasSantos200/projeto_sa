@@ -1,12 +1,18 @@
 
-
 body{
     padding: 150px;
-    background-color: black;
-
+    background-color: rgb(0, 0, 0);
+    cursor: crosshair;
 }
-.palavraOculta{
-    margin: 0px, 10px;
+#palavraOculta{
+    font-size: 75px;
+    margin: 10px;
+    letter-spacing: 10px;
+    color: #ffffff;
+    background: #000000;
+    text-shadow: 2px 2px 0 #4d4d4d, 4px 4px 0 #555555;
+    color: #ffffff;
+    background: #000000;
 }
 h1{
     text-align: center;
@@ -20,3 +26,15 @@ h1{
     text-align: center;
     color:white;    
 }
+
+button:hover, input:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+button{
+    cursor:pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
