@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivinhe a Palavra</title>
+    <title>Adivinhe A Palavra</title>
 </head>
 <body>
-    
-</body>
+    <h1>Adivinhe a Palavra</h1>
+    <main>
+        <section class="sectionPalavraOcultaxx">
+            <p id="palavraOculta" class="palavraSecreta"> <span>_</span> <span>_</span> <span>_</span> <span>_</span></p>
+        </section>
 
+        <section id="interacoes">
+            <input type="text" id="userInput" maxlength="1" placeholder="letraxxxxxxx">
+            <button id="botao" type="submit">chutar</button>
+        </section>
+
+        <section class="informacoes">
+            <p>Tentativas faltantes: <span id="tentativas">6</span></p>
+            <p>Pontuação: <span id="pontuacao">0</span></p>
+            <p>Letras Erradas: <span id="letrasGastas"></span></p>
+        </section>
+
+    </main>
+</body>
 </html>
