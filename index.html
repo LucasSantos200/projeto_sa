@@ -10,19 +10,21 @@
     <h1>Adivinhe a Palavra</h1>
     <main>
         <section class="sectionPalavraOcultaxx">
-            <p id="palavraOculta" class="palavraSecreta"> <span>_</span> <span>_</span> <span>_</span> <span>_</span> <span>_</span></p>
+            <div id="palavraOculta" class="palavraSecreta"> <span>_</span> <span>_</span> <span>_</span> <span>_</span> <span>_</span></div>
         </section>
 
-        <section id="interacoes">
+        <div id="interacoes">
             <input type="text" id="userInput" maxlength="1" placeholder="Letra">
             <button id="botao" type="submit">chutar</button>
-        </section>
+            <button id="botao-reinicio" type="submit">reiniciar</button>
+        </div>
 
-        <section class="informacoes">
+        <div class="informacoes">
             <p>Tentativas faltantes: <span id="tentativas">6</span></p>
             <p>Pontuação: <span id="pontuacao">0</span></p>
             <p>Letras Erradas: <span id="letrasGastas"></span></p>
-        </section>
+        </div>
     </main>
 </body>
+<script src="assets/js/script.js"></script>
 </html>
