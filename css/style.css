@@ -23,7 +23,7 @@ h1{
     color: rgb(255, 255, 255);
 }
 
-#interacoes, p{
+#interacoes, div, #palavraOculta{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     color:white;    
@@ -34,7 +34,15 @@ button:hover, input:hover{
     color: #ffffff;
 }
 
-button, input{
+#botao-reinicio{
+    cursor:pointer;
+    font-size: 25px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 42.8px;
+}
+#botao, #botao-reinicio, input{
     cursor:pointer;
     font-size: 25px;
     background-color: rgb(255, 255, 255);
