@@ -9,7 +9,7 @@ PSEUDOCODIGO
 
  damos as variaveis:
  userInput: armazena a letra digitada pelo jogador
- palavraOculta:
+ palavraOculta: palavra que e invisivel que e substituida quando o jogador coloca a palavra correta 
  tentativas: tentativas que o jogador tera para acertar a palavra
  pontuacao: pontuaçao do jodador quando ganhar a partida quanto menos erros melhor a pontuaçao
  letrasGastas: letras que que foram usadas 
