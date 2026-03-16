@@ -6,8 +6,13 @@ quando todas as letras forem acertadas, o jogo acaba e mostra a palavra correta
 se todas as tentativas acabarem, o jogo bloqueia e mostra a palavra correta
 
 PSEUDOCODIGO
- 
- damos as variaveis: userInput, palavraOculta, tentativas, pontuacao, letrasGastas;
+
+ damos as variaveis:
+ userInput: armazena a letra digitada pelo jogador
+ palavraOculta:
+ tentativas: tentativas que o jogador tera para acertar a palavra
+ pontuacao: pontuaçao do jodador quando ganhar a partida quanto menos erros melhor a pontuaçao
+ letrasGastas: letras que que foram usadas 
 
  passo a passo:
 
