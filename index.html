@@ -3,21 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivinhe A Palavra</title>
 </head>
 <body>
     <h1>Adivinhe a Palavra</h1>
     <main>
-        <section class="sectionPalavraOcultaxx">
-            <div id="palavraOculta" class="palavraSecreta"> <span>_</span> <span>_</span> <span>_</span> <span>_</span> <span>_</span></div>
-        </section>
 
-        <div id="interacoes">
-            <input type="text" id="userInput" maxlength="1" placeholder="Letra">
+            <div id="palavraOculta" class="palavraSecreta"> 
+                <span>_</span> <span>_</span> <span>_</span> <span>_</span> <span>_</span>
+            </div>
+
+        <section class="controles">
+            <br></br>
             <button id="botao" type="submit">chutar</button>
-            <button id="botao-reinicio" type="submit">reiniciar</button>
-        </div>
+            <input type="text" id="userInput" maxlength="1" placeholder="Letra">
+            <button id="botao-reinicio">reiniciar</button>
+        </section>
 
         <div class="informacoes">
             <p>Tentativas faltantes: <span id="tentativas">6</span></p>
