@@ -10,16 +10,15 @@ let correctLetters = [];
 let displayWord = [];
 let pontuacao = 0
 
-
-const displayPalavra = document.getElementById(palavraOculta);
-const displayTentativas = document.getElementById(tentativas);
-const displayPontuacao = document.getElementById(pontuacao);
-const btnReiniciar = document.getElementById(botao-reinicio);
+const displayPalavra = document.getElementById("palavraOculta");
+const displayTentativas = document.getElementById("tentativas");
+const displayPontuacao = document.getElementById("pontuacao");
+const btnReiniciar = document.getElementById("botao-reinicio");
 
 function iniciarJogo(){
     const posicaoSorteadaDaListaDePalavras = Math.floor(Math.random() * listaPalavras.length);
     secretWord = listaPalavras[posicaoSorteadaDaListaDePalavras].toUpperCase();
-        displayWord = array(secretWord.length).fill("_");
+        displayWord = Array(secretWord.length).fill("_");
         attemptsLeft = 6;
         guessedLetters = [];
         correctLetters = [];
@@ -28,17 +27,16 @@ function iniciarJogo(){
 
 function renderWord(){
     displayPalavra.innerHTML = "";
-    displayPalavra.forEach(Letra => {
+    displayWord.forEach(letra => {
         const span = document.createElement("span");
-        span.innerText = Letra; 
+        span.innerText = letra; 
         displayPalavra.appendChild(span);
     });    
 
     displayTentativas.innerText = attemptsLeft;
     displayPontuacao.innerText = pontuacao;
 
+}
 btnReiniciar.addEventListener("click", iniciarJogo);
 
 iniciarJogo();
-
-}
