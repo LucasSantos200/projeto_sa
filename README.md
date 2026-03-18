@@ -5,7 +5,18 @@ quando o jogador errar uma letra, registra em "letras erradas" e diminui as tent
 quando todas as letras forem acertadas, o jogo acaba e mostra a palavra correta
 se todas as tentativas acabarem, o jogo bloqueia e mostra a palavra correta
 
-PSEUDOCODIGO
+PSEUDOCODIGO:
+iniciar jogo
+definir palavra secreta
+tentativas = 6
+enquanto tentativas > 0 e palavra não completa
+ler letra
+caso a letra for a correta coloque em um dos espaços
+caso for a letra for a incorreta 
+mostrar letra abaixo
+se letra já foi usada
+mostrar aviso
+
 
  damos as variaveis:
  userInput: armazena a letra digitada pelo jogador;
