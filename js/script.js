@@ -33,6 +33,7 @@ function renderWord(){
         const span = document.createElement("span");
         span.innerText = letra; 
         displayPalavra.appendChild(span);
+
     });    
 
     displayTentativas.innerText = attemptsLeft;
@@ -76,10 +77,23 @@ function chutar(){
 
         attemptsLeft--;
 
-        document.getElementById("letrasGastas").innerText += chute + " ";
+        document.getElementById("letrasGastas").innerText +=  ` ${chute},  `;
     }
-renderWord(); 
+renderWord();
+checarGameOver();
+
+function checarGameOver(){
+    if(attemptsLeft <= 0){
+        alert("Acabou o jogo, a palavra era: " + secretWord);
+        iniciarJogo();
+    } else if (!displayWord.includes("_")){
+        alert("Pabens");
+        pontuacao += 10;
+        iniciarJogo();
+    }
 }
+}
+
 inputLetra.addEventListener("keypress", (e) => {
     if (e.key === "Enter"){ 
         chutar();
