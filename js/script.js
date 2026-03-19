@@ -58,7 +58,7 @@ function renderWord(){
 const somAcerto = new Audio('sons/respostaCerta.mp3');
 const somErro= new Audio('sons/Errou.mp3');
 const somVitoria= new Audio('sons/somVitoria.mp3');
-const somDerrota= new Audio('sons/perdeu.mp3');
+const somDerrota= new Audio('sons/somDerrota.mp3');
 
 function tocarSomErro() {
     somErro.currentTime = 0; 
