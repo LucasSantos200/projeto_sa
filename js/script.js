@@ -1,6 +1,15 @@
 let listaPalavras = [
     "usassemos", "Point", "Corinthians", "Epic Games", "Aternos", 
-    "Among", "Listening", "Altura", "Ouvido", "Lado"
+    "Among", "Listening", "Altura", "Ouvido", "Lado", 
+    "Minecraft", "Roblox", "Fortnite", "Nintendo", "Playstation", 
+    "Joystick", "Teclado", "Monitor", "Internet", "Algoritmo",
+    "Hardware", "Software", "Python", "Javascript", "Discord",
+    "Geladeira", "Abajur", "Garrafa", "Caderno", "Mochila",
+    "Sapato", "Relogio", "Cadeira", "Bicicleta", "Ventilador",
+    "Galaxia", "Planeta", "Cometa", "Astronauta", "Telescopio",
+    "Girassol", "Montanha", "Cascata", "Terremoto", "Furacao",
+    "Psicologo", "Excecao", "Chuveiro", "Quartzo", "Xadrez",
+    "Zodiaco", "Simbolo", "Ritmo", "Enigma", "Esfinge", "Vascao"
 ]
 
 let secretWord = "";
@@ -9,6 +18,8 @@ let guessedLetters = [];
 let correctLetters = [];
 let displayWord = [];
 let pontuacao = 0
+let jogoFinalizado = false;
+
 
 const displayPalavra = document.getElementById("palavraOculta");
 const displayTentativas = document.getElementById("tentativas");
@@ -17,14 +28,17 @@ const btnReiniciar = document.getElementById("botao-reinicio");
 const btnChutar = document.getElementById("botao");
 const inputLetra = document.getElementById("userInput");
 
+
 function iniciarJogo(){
     const posicaoSorteadaDaListaDePalavras = Math.floor(Math.random() * listaPalavras.length);
     secretWord = listaPalavras[posicaoSorteadaDaListaDePalavras].toUpperCase();
-        displayWord = Array(secretWord.length).fill("_");
-        attemptsLeft = 6;
-        guessedLetters = [];
-        correctLetters = [];
-        renderWord();
+    displayWord = Array(secretWord.length).fill("_");
+    displayWord = secretWord.split('').map(letra => letra === " " ? " " : "_");
+    attemptsLeft = 6;
+    guessedLetters = [];
+    correctLetters = [];
+    document.getElementById("letrasGastas").innerText = ""; 
+    renderWord();
 }
 
 function renderWord(){
@@ -43,6 +57,8 @@ function renderWord(){
 
 const somAcerto = new Audio('sons/respostaCerta.mp3');
 const somErro= new Audio('sons/Errou.mp3');
+const somVitoria= new Audio('sons/somVitoria.mp3');
+const somDerrota= new Audio('sons/perdeu.mp3');
 
 function tocarSomErro() {
     somErro.currentTime = 0; 
@@ -54,15 +70,29 @@ function tocarSomAcerto() {
     somAcerto.play();
 }
 
-function chutar(){
+function chutar(){  
+    const apenasLetras = /^[A-Z]$/;
+
+    if (jogoFinalizado) return;
+    
+    
     const chute = inputLetra.value.toUpperCase();
+    
     inputLetra.value = "";
     inputLetra.focus();
-    if(!chute|| guessedLetters.includes(chute)){
-        alert("essa letra aí ou ta repetida ou não existe");
+    
+    if(!chute || !apenasLetras.test(chute)){
+        alert("Caractere invalido, não to querendo esse aí.");
         return;
     }
+    if(guessedLetters.includes(chute)){
+        alert("ce gosta dessa letra ein?")
+        return;
+    }
+
+
     guessedLetters.push(chute);
+
     if(secretWord.includes(chute)){
         tocarSomAcerto();
 
@@ -72,24 +102,32 @@ function chutar(){
             }
         }
     }else {
-        somErro.currentTime = 0;
-        somErro.play();
-
+        tocarSomErro();
         attemptsLeft--;
-
-        document.getElementById("letrasGastas").innerText +=  ` ${chute},  `;
+       
+        const letrasErradas = guessedLetters.filter(letra => !secretWord.includes(letra));
+        
+        document.getElementById("letrasGastas").innerText =  letrasErradas.join(", ");
     }
 renderWord();
 checarGameOver();
 
 function checarGameOver(){
+  const tempoEspera = 1000;
+  
     if(attemptsLeft <= 0){
+        setTimeout(() => {
+        somDerrota.play();
         alert("Acabou o jogo, a palavra era: " + secretWord);
         iniciarJogo();
+        }, tempoEspera);
     } else if (!displayWord.includes("_")){
+        setTimeout(() => {
+        somVitoria.play();
         alert("Pabens");
         pontuacao += 10;
         iniciarJogo();
+        }, tempoEspera); 
     }
 }
 }
